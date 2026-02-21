@@ -1,0 +1,469 @@
+header{
+    background-color: rgb(255, 252, 252);
+    color: rgb(5, 5, 5);
+    text-align: center;
+    padding: 14px;
+}
+header nav ul li{
+    display: inline;
+    margin-left: 40px;
+}
+
+body{
+  margin: 0;
+}
+
+.bidhi1{
+    background-color: rgb(244, 244, 244);
+text-align: center;
+font-size: 23px;
+height: auto;
+justify-content: center;
+padding: 50px;
+    
+}
+.bidhi1 button {
+    background-color: #f0e8e8;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 15px 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.bidhi1 button:hover {
+    background-color: #005bb5;
+}
+.bidhi2{
+    background-color: rgb(244, 244, 244);
+text-align: center;
+font-size: 23px;
+justify-content: center;
+padding: 50px;
+margin-top: 10px;
+height: auto;
+}
+
+.bidhi2 button {
+    background-color: #f0e8e8;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 15px 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.bidhi2 button:hover {
+    background-color: #005bb5;
+}
+
+.bidhi3{
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 23px;
+    justify-content: center;
+    padding: 50px;
+    margin-top: 10px;
+    color: rgb(230, 219, 219);
+    height: auto;
+    
+}
+
+.bidhi3 h1{
+    margin-bottom: 10px;
+}
+.bidhi3 h2{
+    margin-bottom: 15px;
+}
+
+.bidhi3 img{
+    width: 700px;
+}
+.bidhi3 button {
+    background-color: #e9e0e0;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 15px 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.bidhi3 button:hover {
+    background-color: #005bb5;
+}
+
+.bidhi3{
+    text-align: center;
+    padding: 40px;
+
+}
+
+.bidhi3 h1{
+    margin-bottom: 10px;
+}
+.bidhi3 h2{
+    margin-bottom: 15px;
+}
+
+.bidhi3 img{
+    width: 1000px;
+}
+.bidhi4{
+    display: flex;
+  margin: 10px;
+  height: auto;
+}
+.one{
+    text-align: center;
+font-size: 23px;
+justify-content: center;
+padding: 50px;
+  width: 49%;
+  background-color: rgb(0, 0, 0);
+  color: rgb(247, 240, 240);
+  height: auto;
+  margin-top: 10px;
+  margin: 6px;
+    
+}
+.size, .laptop{
+    height: auto;
+    max-width: 100%;
+}
+
+.bidhi4 button:hover {
+    background-color: #005bb5;
+}
+.two{
+    width: 49%;
+    background-color: rgb(252, 248, 248);
+    color: rgb(0, 0, 0);
+    margin: 6px;
+    text-align: center;
+    padding: 50px;
+}
+.button button{
+    border: 2px solid blue;
+    padding: 14px;
+    border-radius: 30px;
+}
+
+.slider {
+    height: 50vh;
+    margin: auto;
+    position: relative;
+    width: 90%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.slide-track {
+    display: flex;
+    width: calc(300px * 18); 
+    animation: scroll 40s linear infinite;
+}
+
+.slide-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-300px * 9)); 
+    }
+}
+
+
+.slide {
+    height: 300px; 
+    width: 400px;  
+    display: flex;
+    padding: 15px;
+    perspective: 100px; 
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: translateZ(20px); 
+}
+
+@media only screen and (max-width: 1200px) {
+    .slide-track {
+        width: calc(300px * 18); 
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .slide {
+        height: 250px;
+        width: 250px;
+    }
+    .slide-track {
+        width: calc(250px * 18); 
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .slide {
+        height: 200px;
+        width: 200px;
+    }
+    .slide-track {
+        width: calc(200px * 18); 
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .slide {
+        height: 150px;
+        width: 150px;
+    }
+    .slide-track {
+        width: calc(150px * 18); 
+    }
+}
+
+footer {
+  background-color: #f2f2f2;
+  font-family: calibri;
+  padding: 0 22px;
+  padding-bottom: 21px;
+  overflow: hidden;
+}
+
+.footer-content {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.footer-menu {
+  padding-top: 21px;
+  overflow: hidden;
+}
+
+.footer-col {
+  width: 20%;
+  float: left;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+h3 {
+    color: #333;
+    font-size: 14px;
+    position: relative;
+    z-index: 1;
+    background: #f2f2f2;
+    margin-bottom: 6px;
+    margin-top: 0;
+}
+
+.product-list {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+.product-list li {
+  margin-bottom: 5px;
+  line-height: 1;
+}
+
+.product-list a {
+  color: #555;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.product-list a:hover {
+  color: #333;
+}
+
+input[type="checkbox"]:checked+.col-section .product-list {
+    transition: transform 300ms ease, -webkit-transform 300ms ease;
+    visibility: visible;
+    position: static;
+    transform: none;
+}
+
+input[type="checkbox"]:checked+.col-section h3::after {
+    transform: rotate(45deg) scale(1.08);
+}
+
+.footer-base {
+  padding-top: 34px;
+  padding-bottom: 21px;
+  color: #888;
+  font-size: 12px; 
+}
+
+.footer-more-ways {
+  margin-bottom: 7px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #d6d6d6;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+@media only screen and (max-width: 767px) {
+  
+  footer {
+    padding: 0 16px;
+    padding-bottom: 21px;
+  }
+  
+  .footer-col {
+    width: 100%;
+  }
+  
+  .item {
+    border-bottom: 1px solid #d6d6d6;
+  }
+  
+  h3 {
+    padding: 10px 0;
+    margin: 0;
+    cursor: pointer;
+  }
+  
+  h3::after {
+    content: '+';
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: -2px;
+    margin-right: 8px;
+    transition: transform .3s ease
+  }
+  
+  .product-list {
+    visibility: hidden;
+    position: absolute;
+    transform: translateY(-100px);
+    z-index: 1;
+    padding: 5px 0 16px 0;
+  }
+  
+  .product-list li {
+    margin: 0;
+  }
+  
+  .product-list a {
+    display: block;
+    padding: 6px 14px;
+  }
+  
+  .footer-col {
+    overflow: hidden;
+  }
+}
+
+@media only screen and (min-width: 767px) {
+  .item-padding-top {
+    padding-top: 24px;
+  }
+}
+
+.footer-legal-copyright {
+    margin-right: 30px;
+    float: left;
+    margin-top: 3px;
+}
+
+.footer-legal-links {
+  float: left;
+}
+
+.footer-legal-links a {
+  border-right: 1px solid #d6d6d6;
+  margin-right: 10px;
+  padding-right: 12px;
+  display: inline-block;
+  margin-top: 3px;
+  white-space: nowrap;
+  color: #555;
+}
+
+.footer-legal-links a:last-child {
+  border-right: none;
+}
+
+.footer-legal-links a:hover {
+  color: #333;
+}
+.slider {
+  height: 40vh;
+  margin: auto;
+  position: relative;
+  width: 90%;
+  overflow: hidden;
+}
+
+.slide-track {
+  display: flex;
+  width: calc(500px * 10); 
+  animation: scroll 20s linear infinite;
+}
+
+.slide-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-500px * 5)); 
+  }
+}
+
+.slide {
+  height: 250px;
+  width: 500px; 
+  display: flex;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  transition: transform 0.3s;
+}
+
+img:hover {
+  transform: translateZ(20px);
+}
+@media screen and(max-width: 600px)
+  {
+    header{
+        font-size: 36px;
+        line-height: 50px;
+    }
+
+  }
+ 
+  .one h3{
+    background-color: black;
+    color: white;
+  }
+  .two h3{
+    background-color:rgb(252, 249, 249);
+    color: rgb(0, 0, 0);
+  }
+ 

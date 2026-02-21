@@ -1,0 +1,34 @@
+@media only screen and (max-width:1335px) {
+   header{
+    width: auto;
+   }
+    
+}
+@media only screen and (max-width:1199px) {
+ 
+  
+}
+@media only screen and (max-width:657px) {
+  .bidhi4{
+      display: block;
+      margin: none;
+      padding: none;
+   
+    }
+    .one{
+      width: auto;
+    }
+    .bidhi1 a, .bidhi2 a, .bidhi3 a, .bidhi4 a{
+      display: inline-block;
+    }
+    .two{
+      width: auto;
+    }
+    .laptop, .size{
+      max-width: 100%;
+      height: auto;
+    }
+    header{
+        display: none;
+    }
+}
