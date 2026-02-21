@@ -1,0 +1,85 @@
+# This is a program to implement the Caesar cipher encryption and decryption with GUI using tkinter package.
+
+import tkinter as tk
+from tkinter import ttk
+
+# Function to perform Caesar cipher encryption
+def caesar_encrypt(plaintext, key):
+    ciphertext = ""
+    for char in plaintext:
+        if char.isalpha():
+            shift = key % 26
+            if char.islower():
+                base = ord('a')
+                ciphertext += chr((ord(char) - base + shift) % 26 + ord('A'))
+            elif char.isupper():
+                base = ord('A')
+                ciphertext += chr((ord(char) - base + shift) % 26 + ord('A'))
+        else:
+            ciphertext += char
+    return ciphertext
+
+# Function to perform Caesar cipher decryption
+def caesar_decrypt(ciphertext, key):
+    plaintext = ""
+    shift = key % 26
+
+    for char in ciphertext:
+        if char.isalpha():
+            if char.islower():
+                base = ord('a')
+                plaintext += chr((ord(char) - base - shift) % 26 + base)
+            else:
+                base = ord('A')
+                plaintext += chr((ord(char) - base - shift) % 26 + base)
+        else:
+            plaintext += char
+
+    return plaintext
+
+# Function to handle the encryption button click
+def on_encrypt():
+    plaintext = plaintext_entry.get("1.0", tk.END).strip()
+    key = int(key_entry.get("1.0", tk.END).strip())
+    ciphertext = caesar_encrypt(plaintext, key)
+    result_entry.delete("1.0", tk.END)
+    result_entry.insert(tk.END, ciphertext)
+
+# Function to handle the decryption button click
+def on_decrypt():
+    ciphertext = plaintext_entry.get("1.0", tk.END).strip()
+    key = int(key_entry.get("1.0", tk.END).strip())
+    plaintext = caesar_decrypt(ciphertext, key)
+    result_entry.delete("1.0", tk.END)
+    result_entry.insert(tk.END, plaintext)
+
+# Create the main window
+root = tk.Tk()
+root.title("Caesar Cipher")
+
+# Create and place the plaintext input label and text area
+plaintext_label = ttk.Label(root, text="Plain Text")
+plaintext_label.grid(row=0, column=0, padx=10, pady=5)
+plaintext_entry = tk.Text(root, height=3, width=50)
+plaintext_entry.grid(row=1, column=0, padx=10, pady=5)
+
+# Create and place the key input label and text area
+key_label = ttk.Label(root, text="Key")
+key_label.grid(row=2, column=0, padx=10, pady=5)
+key_entry = tk.Text(root, height=3, width=50)
+key_entry.grid(row=3, column=0, padx=10, pady=5)
+
+# Create and place the result label and text area
+result_label = ttk.Label(root, text="Cipher Text")
+result_label.grid(row=4, column=0, padx=10, pady=5)
+result_entry = tk.Text(root, height=3, width=50)
+result_entry.grid(row=5, column=0, padx=10, pady=5)
+
+# Create and place the encrypt and decrypt buttons
+encrypt_button = ttk.Button(root, text="ENCRYPT", command=on_encrypt)
+encrypt_button.grid(row=6, column=0, padx=10, pady=5, sticky="w")
+decrypt_button = ttk.Button(root, text="DECRYPT", command=on_decrypt)
+decrypt_button.grid(row=6, column=0, padx=10, pady=5, sticky="e")
+
+# Run the main event loop
+root.mainloop()
