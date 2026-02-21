@@ -1,0 +1,73 @@
+# Monoalphabetic Cipher
+
+import tkinter as tk
+from tkinter import ttk
+
+# Encrypt function
+def mono_encrypt(plaintext, key):
+    plaintext = plaintext.upper()
+    key = key.upper()
+    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    result = ""
+
+    for char in plaintext:
+        if char in alphabet:
+            index = alphabet.index(char)
+            result += key[index]
+        else:
+            result += char
+    return result
+
+# Decrypt function
+def mono_decrypt(ciphertext, key):
+    ciphertext = ciphertext.upper()
+    key = key.upper()
+    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    result = ""
+
+    for char in ciphertext:
+        if char in key:
+            index = key.index(char)
+            result += alphabet[index]
+        else:
+            result += char
+    return result
+
+# Button actions
+def on_encrypt():
+    text = text_entry.get("1.0", tk.END).strip()
+    key = key_entry.get("1.0", tk.END).strip()
+    result = mono_encrypt(text, key)
+    result_entry.delete("1.0", tk.END)
+    result_entry.insert(tk.END, result)
+
+def on_decrypt():
+    text = text_entry.get("1.0", tk.END).strip()
+    key = key_entry.get("1.0", tk.END).strip()
+    result = mono_decrypt(text, key)
+    result_entry.delete("1.0", tk.END)
+    result_entry.insert(tk.END, result)
+
+# GUI setup
+root = tk.Tk()
+root.title("Monoalphabetic Cipher")
+
+ttk.Label(root, text="Text").grid(row=0, column=0, padx=10, pady=5)
+text_entry = tk.Text(root, height=3, width=50)
+text_entry.grid(row=1, column=0, padx=10, pady=5)
+
+ttk.Label(root, text="Key (26 letters)").grid(row=2, column=0, padx=10, pady=5)
+key_entry = tk.Text(root, height=2, width=50)
+key_entry.grid(row=3, column=0, padx=10, pady=5)
+
+ttk.Label(root, text="Result").grid(row=4, column=0, padx=10, pady=5)
+result_entry = tk.Text(root, height=3, width=50)
+result_entry.grid(row=5, column=0, padx=10, pady=5)
+
+encrypt_btn = ttk.Button(root, text="ENCRYPT", command=on_encrypt)
+encrypt_btn.grid(row=6, column=0, sticky="w", padx=10, pady=5)
+
+decrypt_btn = ttk.Button(root, text="DECRYPT", command=on_decrypt)
+decrypt_btn.grid(row=6, column=0, sticky="e", padx=10, pady=5)
+
+root.mainloop() 

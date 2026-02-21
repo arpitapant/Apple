@@ -1,0 +1,54 @@
+import tkinter as tk
+from tkinter import ttk
+
+# function to return key value for sorting
+def get_key_value(i):
+    return key[i]
+
+def encrypt():
+    global key
+    text = plaintext.get("1.0", tk.END).strip().replace(" ", "")
+    key = list(map(int, key_entry.get().split()))
+
+    cols = len(key)
+    rows = (len(text) + cols - 1) // cols
+
+    table = [['x'] * cols for _ in range(rows)]
+
+    k = 0
+    for r in range(rows):
+        for c in range(cols):
+            if k < len(text):
+                table[r][c] = text[k]
+                k += 1
+
+    cipher = ""
+    order = sorted(range(cols), key=get_key_value)
+
+    for c in order:
+        for r in range(rows):
+            cipher += table[r][c]
+
+    cipher_text.delete("1.0", tk.END)
+    cipher_text.insert(tk.END, cipher)
+
+
+# GUI
+root = tk.Tk()
+root.title("Transposition Cipher")
+
+ttk.Label(root, text="Plain Text").grid(row=0, column=0)
+plaintext = tk.Text(root, height=3, width=40)
+plaintext.grid(row=1, column=0)
+
+ttk.Label(root, text="Key (space separated)").grid(row=2, column=0)
+key_entry = ttk.Entry(root, width=40)
+key_entry.grid(row=3, column=0)
+
+ttk.Label(root, text="Cipher Text").grid(row=4, column=0)
+cipher_text = tk.Text(root, height=3, width=40)
+cipher_text.grid(row=5, column=0)
+
+ttk.Button(root, text="ENCRYPT", command=encrypt).grid(row=6, column=0, sticky="w")
+
+root.mainloop()
